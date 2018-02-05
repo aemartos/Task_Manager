@@ -1,0 +1,191 @@
+
+
+
+.container
+	.container_item
+		&.container_statuslist
+			.container_list
+				overflow-x: hidden
+				overflow-y: auto
+				width: $w3
+				border-right: .05em solid $midarkgrey
+				.fixed_name
+					overflow: hidden
+					z-index: 2
+					.name_main
+						z-index: 1
+						position: fixed
+						background-color: $darkgrey
+						border-right: .05em solid $midarkgrey
+						border-bottom: .05em solid $midarkgrey
+						width: $w3
+						padding: 2em 1.5em 1.8em
+						display: flex
+						align-items: center
+						flex-flow: row nowrap
+						.name_list_title
+							opacity: .5
+							margin-right: .5em
+						.name_list_icon
+							cursor: pointer
+							opacity: .5
+							font-family: nettoicons
+							font-size: .8em
+				#sortable_list
+					margin-top: 4.8em
+				.list_item
+					border-bottom: .05em solid $midarkgrey
+					cursor: pointer
+					&.list_day
+						background-color: $midarkgrey
+						padding: .8em
+						font-size: .8em
+					&.list_task
+						padding: 1.2em
+						background-color: $darkgrey
+						display: flex
+						align-items: center
+						flex-flow: row nowrap
+						justify-content: space-between
+						&:hover
+							background-color: rgba(41, 41, 41, .5)
+						&.selected
+							background-color: $lightblack
+						.task_all
+							display: flex
+							justify-content: space-between
+							align-items: center
+							flex-flow: row nowrap
+							.task_icon
+								color: $white
+								font-family: nettoicons-bold
+								font-size: 1.2em
+								margin-right: .7em
+								&.todo
+									color: magenta
+								&.doing
+									color: aqua
+								&.done
+									color: lawngreen
+								&.overdue
+									color: yellow
+								&.canceled
+									color: red
+							.task_information
+								.task_information_item
+									&.task_title
+										padding-right: .4em
+										width: 15em
+										white-space: nowrap
+										text-overflow: ellipsis
+										overflow: hidden
+										line-height: 1.3em
+									&.task_date
+										font-family: netto-light
+										font-size: .7em
+										margin-top: .5em 
+										opacity: .5
+						.task_arrows
+							font-family: nettoicons
+							font-size: .2em
+							cursor: ns-resize
+							@include text-stroke (.3em $white)
+							.task_arrow_up
+								@include transform(rotate(270deg))
+								margin-bottom: 1em
+							.task_arrow_down
+								@include transform(rotate(90deg))
+
+
+@media (max-width: 1024px)
+	
+	.container
+		.container_item
+			&.container_statuslist
+				.container_list
+					width: 14em
+					.fixed_name
+						.name_main
+							width: 14em
+					#sortable_list
+						.list_item
+							&.list_task
+								.task_all
+									.task_information
+										.task_information_item
+											&.task_title
+												width: 8em
+				&.closed
+					display: none
+
+
+@media (max-width: 768px) 
+
+	.container
+		.container_item
+			&.container_statuslist
+				.container_list
+					.fixed_name
+						.name_main
+							border-top: .05em solid $midarkgrey
+
+
+
+@media (max-width: 737px)
+	
+	.container
+		.container_item
+			&.container_statuslist
+				.container_list
+					width: 100%
+					.fixed_name
+						.name_main
+							width: 100%
+							background-color: $lightblack
+					#sortable_list
+						.list_item
+							&.list_task
+								&.active
+									background-color: $darkgrey
+								.task_all
+									.task_information
+										.task_information_item
+											&.task_title
+												//max-width: 13.3em
+												width: 33.3em
+
+@media (max-width: 600px)
+	
+	.container
+		.container_item
+			&.container_statuslist
+				.container_list
+					#sortable_list
+						.list_item
+							&.list_task
+								.task_all
+									.task_information
+										.task_information_item
+											&.task_title
+												width: 23.3em
+
+
+@media (max-width: 480px)
+	
+	.container
+		.container_item
+			&.container_statuslist
+				.container_list
+					#sortable_list
+						.list_item
+							&.list_task
+								.task_all
+									.task_information
+										.task_information_item
+											&.task_title
+												width: 16.3em
+
+
+
+							
+							

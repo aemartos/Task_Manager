@@ -1,0 +1,208 @@
+
+
+
+.calendar
+	display: block
+	position: fixed
+	width: 85%
+	height: 46.2em
+	left: 50%
+	top: 50%
+	transform: translate(-50%, -50%)
+	z-index: 4
+	background-color: $darkgrey
+	border: .05em solid $midarkgrey
+	@include box-shadow(-2px -2px 13px -1px rgba(26,26,26,1))
+	border-radius: .3em
+	transition: transform 350ms ease
+	&.closed
+		display: none
+		transition: transform 350ms ease
+	.calendar_buttons
+		height: 2em
+		background-color: $midarkgrey
+		border-bottom: .05em solid $midarkgrey
+		border-top-left-radius: .3em
+		border-top-right-radius: .3em
+		@include box-shadow(0px 1px 3px -1px rgba(0,0,0,0.59))
+		display: flex
+		flex-flow: row nowrap
+		justify-content: space-between
+		align-items: center
+		padding: 1em
+		.add_button
+			font-family: nettoicons
+			cursor: pointer
+		.close_button
+			cursor: pointer
+
+	.calendar_month
+		display: flex
+		flex-flow: row nowrap
+		justify-content: center
+		align-items: center
+		padding: 1em
+		padding-bottom: 1.5em
+		.calendar_arrow
+			cursor: pointer
+			font-family: nettoicons
+			font-size: .8em
+			@include transition (all 300ms cubic-bezier(0.4, 0, 0.2, 1))
+			&:hover
+				@include transform(scale(1.4,1.4))
+				@include transition (all 300ms cubic-bezier(0.4, 0, 0.2, 1))
+		.calendar_month_text
+			text-align: center
+			padding: 0 1em
+			font-size: 2em
+
+	.calendar_week_days
+		display: flex
+		flex-flow: row nowrap
+		justify-content: space-around
+		align-items: flex-end
+		text-align: right
+		padding-bottom: 1em
+		border-bottom: .05em solid $midarkgrey
+		.calendar_day_name
+			width: 14.3%
+			padding-right: 1em
+	.calendar_week
+		display: flex
+		flex-flow: row nowrap
+		justify-content: space-around
+		align-items: flex-end
+		text-align: right
+		.calendar_day
+			width: 14.3%
+			height: 7.5em 
+			border: .05em solid $midarkgrey
+			&.not_in_month
+				color: rgba(white, .2)
+			.number_day
+				padding: 1em
+			.recordatory
+				display: flex
+				flex-flow: row nowrap
+				justify-content: flex-start
+				align-items: center
+				margin: 0 auto
+				color: $darkgrey
+				//color: white
+				padding: .2em .1em
+				border-radius: .3em
+				width: 85%
+				.recordatory_icon
+					font-family: nettoicons
+				.recordatory_text
+					white-space: nowrap
+					text-overflow: ellipsis
+					overflow: hidden
+				&.todo
+					background-color: magenta
+				&.doing
+					background-color: aqua
+				&.done
+					background-color: lawngreen
+				&.overdue
+					background-color: yellow
+				&.canceled
+					background-color: red
+
+.overley
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: 3
+	background-color: rgba(black, .8)
+	opacity: 1
+	&.closed
+		opacity: 0
+		transition: opacity 350ms ease
+		pointer-events: none
+
+
+@media (max-width: 1024px) and (orientation: landscape)
+
+	.calendar 
+		width: 100%
+		height: 100vh
+		border: 0
+		left: 0
+		top: 0
+		transform: translate(0, 0)
+		.calendar_week
+			.calendar_day
+				height: 16.5vh
+
+
+@media (max-width: 736px) and (orientation: landscape)
+
+	.calendar 
+		width: 100%
+		height: 100vh
+		border: 0
+		left: 0
+		top: 0
+		transform: translate(0, 0)
+		.calendar_buttons
+			height: 1em
+			padding: .7em
+			border-top-left-radius: 0
+			border-top-right-radius: 0
+		.calendar_month
+			padding: 1em
+			padding-top: .5em
+		.calendar_week
+			.calendar_day
+				height: 13.8vh
+				.number_day
+					padding-top: .5em
+					padding-bottom: .2em
+					text-align: center
+				.recordatory
+					border-radius: 5em
+					width: .7em
+					height: .7em
+					.recordatory_icon
+						display: none
+					.recordatory_text
+						display: none
+
+
+@media (max-width: 480px)
+	
+	.calendar
+		width: 100%
+		height: 100%
+		border-radius: 0
+		.calendar_buttons
+			border-radius: 0
+		.calendar_week
+			.calendar_day
+				height: 16.2vh 
+				.number_day
+					text-align: center
+				.recordatory
+					border-radius: 5em
+					width: .7em
+					height: .7em
+					.recordatory_icon
+						display: none
+					.recordatory_text
+						display: none
+
+
+@media (max-width: 375px)
+	
+	.calendar
+		.calendar_week
+			.calendar_day
+				height: 15.7vh 
+
+
+
+
+

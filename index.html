@@ -1,0 +1,688 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>ESD Task Manager</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+    </head>
+    <body>
+
+        
+        <header>
+
+            <div class="header_item header_logo">
+                <img src="img/logoesd.png">
+            </div>
+
+            
+            <div class="header_item header_menu">
+                <div class="selector_desk">
+                    <div class="selected_desk">Desk 01</div>
+                    <div class="desk_arrows">
+                        <div class="desk_arrow desk_arrow_left"><</div>
+                        <div class="desk_arrow desk_arrow_right">></div>
+                    </div>
+                </div>
+                <ul class="type_desk closed">
+                    <li class="desk_item desk_01" selected="selected">Desk 01</li>
+                    <li class="desk_item desk_02">Desk 02</li>
+                    <li class="desk_item desk_03">Desk 03</li>
+                    <li class="desk_item desk_04">Desk 04</li>
+                </ul>
+            </div>
+
+
+            <div class="header_item header_search">
+                <div class="border_header_search">
+                    <input class="field_search" type="search" id="taskSearch" name="q" placeholder="Search tasks">
+                    <button class="button_search">,</button>
+                </div>
+            </div>
+
+            
+            <div class="header_item header_usercal">
+                <div class="header_calendar"><span class="fa fa-calendar"></span></div>
+                <div class="header_user">
+                    <div class="user_item user_icon"><span class="user_icon_img">Î</span></div>
+                    <div class="user_item user_name">Test User</div>
+                    <div class="user_item user_arrow">></div>
+                </div>
+                <div class="header_user_menu closed">
+                    <div class="user_menu_arrow"></div>
+                    <ul class="user_menu_items">
+                        <li class="user_menu_item">User menu item 01</li>
+                        <li class="user_menu_item">User menu item 02</li>
+                        <li class="user_menu_item">User menu item 03</li>
+                        <li class="user_menu_item">User menu item 04</li>
+                        <li class="user_menu_item">User menu item 05</li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </header>
+
+
+        <div class="add_task closed">
+            <div class="add_task_header">
+                <div class="add_task_title">
+                    <div class="add_task_text">ADD TASK</div>
+                    <!--<div class="add_task_cross">I</div>-->
+                </div>
+
+                <div class="add_task_button">
+                    <div class="close_task_button">
+                        <span class="fa fa-close"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="add_task_body">
+                
+                <div class="add_title">
+                    <div class="add_title_text">Title</div>
+                    <div class="add_title_border">
+                        <input class="add_title_field" type="text" id="add_title" name="q" placeholder="Add title">
+                    </div>
+                </div>
+
+                <div class="add_description">
+                    <div class="add_description_text">Description</div>
+                    <div class="add_description_border">
+                        <input class="add_description_field" type="text" id="add_description" name="q" placeholder="Add description">
+                    </div>
+                </div>
+
+                <div class="add_status">
+                    <div class="add_status_text">Status</div>
+                    <div class="selector_status">
+                        <div class="pre_status">Add status</div>
+                        <div class="status_arrow">></div>
+                    </div>
+                    <ul class="type_status closed">
+                        <li class="status_item status_01"><span class="todo">&#x25cf</span> To do</li>
+                        <li class="status_item status_02"><span class="doing">&#x25cf</span> Doing</li>
+                        <li class="status_item status_03"><span class="done">&#x25cf</span> Done</li>
+                        <li class="status_item status_04"><span class="overdue">&#x25cf</span> Overdue</li>
+                        <li class="status_item status_05"><span class="canceled">&#x25cf</span> Canceled</li>
+                    </ul>
+                </div>
+
+                <div class="add_category">
+                    <div class="add_category_text">Category</div>
+                    <div class="selector_category">
+                        <div class="pre_category">Add category</div>
+                        <div class="category_arrow">></div>
+                    </div>
+                    <ul class="type_category closed">
+                        <li class="category_item category_01"><span class="category01">e</span> Category 01</li>
+                        <li class="category_item category_02"><span class="category02">f</span> Category 02</li>
+                        <li class="category_item category_03"><span class="category03">J</span> Category 03</li>
+                        <li class="category_item category_04"><span class="category04">!</span> Category 04</li>
+                        <li class="category_item category_05"><span class="category05">&amp;</span> Category 05</li>
+                        <li class="category_item category_06"><span class="category06">¡</span> Category 06</li>
+                        <li class="category_item category_07"><span class="category07">ç</span> Category 07</li>
+                        <li class="category_item category_08"><span class="category08">¿</span> Category 08</li>
+                        <li class="category_item category_09"><span class="category09">Ç</span> Category 09</li>
+                        <li class="category_item category_10"><span class="category10">á</span> Category 10</li>
+
+                    </ul>
+                </div>
+
+                <div class="add_images">
+                    <div class="add_images_text">Images</div>
+                    <div class="drop_area_main drop_area_main_img">
+                        <div class="drop_area drop_area_img">
+                            <div class="fa fa-file-image-o icon icon_img"></div>
+                            <input class="input_img" type="file" id="input0" accept="image/*" multiple="multiple" placeholder="Choose an image"/>
+                            <label for="input0" class="attch_text img_text">
+                                Choose an image
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="add_attachments">
+                    <div class="add_attachments_text">Attachments</div>
+                    <div class="drop_area_main drop_area_main_attch">
+                        <div class="drop_area drop_area_attch">
+                            <div class="fa fa-file-o icon icon_file"></div>
+                            <input class="input_file" type="file" id="input1" multiple="multiple" placeholder="Choose a file"/>
+                            <label for="input1" class="attch_text file_text">
+                                Choose a file
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="add_subtasks">
+                    <div class="add_subtasks_text">Subtasks</div>
+                    <div class="add_subtasks_border">
+                        <input class="add_subtasks_field" type="text" id="add_subtasks" name="q" placeholder="Add subtasks">
+                    </div>
+                </div>
+
+                <button class="add_button">I</button>
+
+            </div>
+        </div>
+
+        <div class="overley2 closed"></div>
+
+
+        <div class="calendar closed">
+            <div class="calendar_buttons">
+                <div class="add_button">
+                    <span class="">I</span>
+                </div>
+                <div class="close_button">
+                    <span class="fa fa-close"></span>
+                </div>
+            </div>
+            <div class="calendar_month">
+                <div class="calendar_arrow calendar_arrow_left"><</div>
+                <div class="calendar_month_text">month of 2017</div>
+                <div class="calendar_arrow calendar_arrow_right">></div>
+            </div>
+            <div class="calendar_week_days">
+                <div class="calendar_day_name monday">mon</div>
+                <div class="calendar_day_name tuesday">tue</div>
+                <div class="calendar_day_name wednesday">wed</div>
+                <div class="calendar_day_name thursday">thu</div>
+                <div class="calendar_day_name friday">fri</div>
+                <div class="calendar_day_name saturday">sat</div>
+                <div class="calendar_day_name sunday">sun</div>
+            </div>
+        
+        
+            <div class="calendar_week calendar_week01">
+                <div class="calendar_day">
+                    <div class="number_day">01</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day">
+                    <div class="number_day">02</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day">
+                    <div class="number_day">03</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day">
+                    <div class="number_day">04</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day">
+                    <div class="number_day">05</div>
+                    <div class="recordatory todo">
+                        <div class="recordatory_icon">&</div>
+                        <div class="recordatory_text">Task title 03</div>
+                    </div>
+                </div>
+                <div class="calendar_day">
+                    <div class="number_day">06</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day">
+                    <div class="number_day">07</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="calendar_week calendar_week02">
+                <div class="calendar_day">
+                    <div class="number_day">08</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day">
+                    <div class="number_day">09</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day">
+                    <div class="number_day">10</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day">
+                    <div class="number_day">11</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day">
+                    <div class="number_day">12</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day">
+                    <div class="number_day">13</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day">
+                    <div class="number_day">14</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="calendar_week calendar_week03">
+                <div class="calendar_day">
+                    <div class="number_day">15</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day">
+                    <div class="number_day">16</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day">
+                    <div class="number_day">17</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day">
+                    <div class="number_day">18</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day">
+                    <div class="number_day">19</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day">
+                    <div class="number_day">20</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day">
+                    <div class="number_day">21</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="calendar_week calendar_week04">
+                <div class="calendar_day">
+                    <div class="number_day">22</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day">
+                    <div class="number_day">23</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day">
+                    <div class="number_day">24</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day">
+                    <div class="number_day">25</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day">
+                    <div class="number_day">26</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day">
+                    <div class="number_day">27</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day">
+                    <div class="number_day">28</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="calendar_week calendar_week05">
+                <div class="calendar_day">
+                    <div class="number_day">29</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day">
+                    <div class="number_day">30</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day">
+                    <div class="number_day">31</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day not_in_month">
+                    <div class="number_day">01</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day not_in_month">
+                    <div class="number_day">02</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day not_in_month">
+                    <div class="number_day">03</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+                <div class="calendar_day not_in_month">
+                    <div class="number_day">04</div>
+                    <div class="recordatory">
+                        <div class="recordatory_icon"></div>
+                        <div class="recordatory_text"></div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div> <!-- CALENDAR END -->
+
+        <div class="overley closed"></div>
+
+
+
+        <div class="container">
+            
+            <div class="container_item container_menu">
+                <div class="menu_categories">
+                    <div class="category category00"><span id="category00">$</span></div>
+                    <div class="category category01"><span id="category01">e</span></div>
+                    <div class="category category02"><span id="category02">f</span></div>
+                    <div class="category category03"><span id="category03">J</span></div>
+                    <div class="category category04"><span id="category04">!</span></div>
+                    <div class="category category05"><span id="category05">&amp;</span></div>
+                    <div class="category category06"><span id="category06">¡</span></div>
+                    <div class="category category07"><span id="category07">ç</span></div>
+                    <div class="category category08"><span id="category08">¿</span></div>
+                    <div class="category category09"><span id="category09">Ç</span></div>
+                    <div class="category category10"><span id="category10">á</span></div>
+                </div>
+                <div class="settings"><a><span class="settings_icon">7</span></a></div>
+            </div>
+            
+
+            <div class="container_item container_statuslist">
+                
+                <div class="container_item container_status">
+                    <div class="tasks_titular">
+                        <div class="tasks_main">
+                            <div class="tasks_main_title">TASKS</div>
+                            <span class="tasks_main_icon">I</span>
+                        </div>
+                        <div class="tasks_titulars">
+                            <div class="task_titular taks_titular01">ALL TASKS</div>
+                            <div class="task_titular taks_titular01">PERSONAL TASKS</div>
+                            <div class="task_titular taks_titular01">WORK TASKS</div>
+                            <div class="task_titular taks_titular01">FAMILY TASKS</div>
+                        </div>
+                    </div>
+
+                    <div class="tasks_status">
+                        <div class="status_main">
+                            <div class="status_main_title">STATUS</div>
+                            <span class="status_main_icon">I</span>
+                        </div>
+                        <div class="status_titulars">
+                            <div class="status_titular status_titular01">
+                                <span class="status_icon status_icon01 todo fa fa-circle"></span>
+                                <div class="status_title status_title01" id="todo">TO DO</div>
+                            </div>
+                            <div class="status_titular status_titular01">
+                                <span class="status_icon status_icon02 doing fa fa-circle"></span>
+                                <div class="status_title status_title02" id="doing">DOING</div>
+                            </div>
+                            <div class="status_titular status_titular01">
+                                <span class="status_icon status_icon03 done fa fa-circle"></span>
+                                <div class="status_title status_title03" id="done">DONE</div>
+                            </div>
+                            <div class="status_titular status_titular01">
+                                <span class="status_icon status_icon04 overdue fa fa-circle"></span>
+                                <div class="status_title status_title04" id="overdue">OVERDUE</div>
+                            </div>
+                            <div class="status_titular status_titular01">
+                                <span class="status_icon status_icon05 canceled fa fa-circle"></span>
+                                <div class="status_title status_title05" id="canceled">CANCELED</div>
+                            </div>
+                        </div>
+                        <div class="tasks_progress_container">
+                            <div class="progress_title">PROGRESS</div>
+                            <div class="progress_bar"><div class="progress_fill"></div></div>
+                            <div class="progress_percent"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div id="container_list_id" class="container_item container_list">
+                    
+                    <div class="fixed_name">
+                        <div class="name_main">
+                            <div class="name_list_title">TASKS LIST</div>
+                            <span class="name_list_icon">I</span>
+                        </div>
+                    </div>
+
+
+                    
+                    <div class="search_highlight" id="sortable_list">
+
+
+                        
+                    </div> <!-- END SORTABLELIST -->
+
+                </div> <!-- END CONTAINERLIST -->
+
+            </div> <!-- END CONTAINERSTATUSLIST -->
+
+
+
+            <div class="container_item container_task closed">
+                
+                <div class="container_taskbody">
+                    
+                    <div class="taskbody">
+                        
+                        <div class="taskbody_header">
+                            
+                            <div class="taskbody_info_box">
+                                <div class="taskbody_information">
+
+                                    <div class="taskbody_close taskbody_close_icon">
+                                        <span class="fa fa-close"></span>
+                                    </div>
+
+                                    <div class="taskbody_info_item taskbody_icon"></div>
+                                    
+                                    <div class="taskbody_info_item taskbody_statusdate">   
+                                        <div class="taskbody_status"></div>
+                                        <div class="taskbody_date"></div>
+                                    </div>
+
+                                </div>
+                                
+                            </div>
+                            <div class="taskbody_arrows">
+                                <div class="taskbody_arrow taskbody_arrow_left"><</div>
+                                <div class="taskbody_arrow taskbody_arrow_right">></div>
+                            </div>
+
+                        </div>  <!-- END TASKBODY_HEADER -->
+
+                        
+                        <div class="taskbody_content search_highlight">
+                            
+                            <div class="taskbody_content_title"></div>
+                            <div class="taskbody_content_text"></div>
+
+                            <div class="taskbody_content_icons">
+                                <div class="taskbody_icons_status">
+                                    <div class="taskbody_icon icon_todo"></div>
+                                    <div class="taskbody_icon icon_doing"></div>
+                                    <div class="taskbody_icon icon_done"></div>
+                                    <div class="taskbody_icon icon_overdue"></div>
+                                    <div class="taskbody_icon icon_canceled"></div>
+                                </div>
+                                <div class="taskbody_icon icon_delete"><span>4</span>DELETE</div>
+                            </div>
+
+                            <div class="line"></div>
+
+                            <div class="taskbody_content_images">
+                                
+                                <div class="taskbody_content_images_title">
+                                    <div class="taskbody_images_text">IMAGES</div>
+                                    <div class="taskbody_images_plus">I</div>
+                                </div>
+
+                                <div class="taskbody_content_images_gallery"></div>
+
+                            </div>
+                            
+                            <div class="line"></div>
+
+                            <div class="taskbody_content_attachments">
+                                
+                                <div class="taskbody_content_attachments_title">
+                                    <div class="taskbody_attachments_text">ATTACHMENTS</div>
+                                    <div class="taskbody_attachments_plus">I</div>
+                                </div>
+
+                                <div class="taskbody_content_attachments_box"></div>
+
+                            </div>
+
+                            <div class="line"></div>
+
+
+                            <div class="taskbody_content_list_box">
+                                
+                                <div class="taskbody_content_list_title">
+                                    <div class="taskbody_list_text">SUBTASKS LIST</div>
+                                    <div class="taskbody_list_plus">I</div>
+                                </div>
+
+                                <div class="taskbody_content_list"></div>
+
+
+                            </div>
+
+
+                        </div> <!-- END TASKBODY_CONTENT -->
+
+
+                    </div> <!-- END TASKBODY -->
+
+                
+                </div> <!-- END CONTAINERTASKBODY -->
+
+                
+            </div> <!-- END CONTAINERTASK -->
+
+
+
+
+
+        </div>  
+        
+
+        
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/vendor/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+        
+        <script src="js/data.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

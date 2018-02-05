@@ -1,0 +1,145 @@
+
+
+
+.container
+	.container_item
+		&.container_statuslist
+			width: $w5
+			display: flex
+			align-items: center
+			flex-flow: row nowrap
+			background-color: $darkgrey
+
+			.container_status
+				overflow-x: hidden
+				overflow-y: auto
+				width: $w2
+				border-right: .05em solid $midarkgrey
+				display: flex
+				justify-content: space-between
+				flex-flow: column nowrap
+				&::-webkit-scrollbar
+					display: none
+				.tasks_titular
+					margin: 2em 3em 0
+					.tasks_main
+						opacity: .5
+						margin-bottom: 2em
+						display: flex
+						align-items: center
+						flex-flow: row nowrap
+						.tasks_main_title
+							margin-right: .5em
+						.tasks_main_icon
+							cursor: pointer
+							font-family: nettoicons
+							//@include text-stroke (.1em $white)
+							font-size: .8em
+					.tasks_titulars
+						.task_titular
+							cursor: pointer
+							margin-bottom: 1em
+				.tasks_status
+					margin: 1.5em 3em 3.4em
+					.status_main
+						opacity: .5
+						margin-bottom: 1em
+						display: flex
+						align-items: center
+						flex-flow: row nowrap
+						.status_main_title
+							margin-right: .5em
+							cursor: pointer
+						.status_main_icon
+							cursor: pointer
+							font-family: nettoicons
+							font-size: .8em
+					.status_titulars
+						.status_titular
+							display: flex
+							flex-flow: row nowrap
+							align-items: center
+							margin-bottom: .5em
+							cursor: pointer
+							.status_icon
+								font-size: .5em
+								margin-right: .5em
+								&.todo
+									color: magenta
+								&.doing
+									color: aqua
+								&.done
+									color: lawngreen
+								&.overdue
+									color: yellow
+								&.canceled
+									color: red
+
+				.tasks_progress_container
+					margin-top: 3em
+					.progress_title
+						opacity: .5
+						margin-bottom: 1em
+					.progress_bar
+						opacity: .5
+						width: 100%
+						height: .5em
+						border: .1em solid white
+						border-radius: 5em
+						margin-bottom: 1em
+						.progress_fill
+							height: .4em
+							background-color: white
+							//border-top-left-radius: 5em
+							border-bottom-left-radius: .2em
+					.progress_percent
+						opacity: .5
+						font-size: .7em
+						
+			
+@media (max-width: 1024px)
+	
+	.container
+		.container_item
+			&.container_statuslist
+				width: 25em
+				.container_status
+					width: 11em
+					.tasks_titular
+						margin: 2em 2em 0
+					.tasks_status
+						//margin: 1.5em 2em 3.4em
+
+
+@media (max-width: 768px) 
+
+	.container
+		.container_item
+			&.container_statuslist
+				width: 14em
+				flex-flow: column nowrap
+				.container_status
+					width: 14em
+					height: 45em
+					.tasks_titular
+						margin: 2em 3em 0
+						.tasks_main
+							margin-bottom: 1em
+					.tasks_status
+						margin: 1.5em 3em 2em
+						.tasks_progress_container
+							display: none
+					
+
+@media (max-width: 737px)
+
+	.container
+		.container_item
+			&.container_statuslist
+				width: 100%
+				.container_status
+					display: none
+
+
+
+

@@ -1,0 +1,284 @@
+
+
+.add_task
+	display: block
+	position: fixed
+	width: 40%
+	left: 50%
+	top: 50%
+	transform: translate(-50%, -50%)
+	z-index: 4
+	background-color: $darkgrey
+	border: .05em solid $midarkgrey
+	@include box-shadow(-2px -2px 13px -1px rgba(26,26,26,1))
+	border-radius: .3em
+	transition: transform 350ms ease
+	&.closed
+		display: none
+		transition: transform 350ms ease
+	.add_task_header
+		height: 2em
+		background-color: $midarkgrey
+		border-bottom: .05em solid $midarkgrey
+		border-top-left-radius: .3em
+		border-top-right-radius: .3em
+		@include box-shadow(0px 1px 3px -1px rgba(0,0,0,0.59))
+		display: flex
+		flex-flow: row nowrap
+		justify-content: space-between
+		align-items: center
+		padding: 1em
+		.add_task_title
+			display: flex
+			flex-flow: row nowrap
+			justify-content: flex-end
+			align-items: center
+			.add_task_cross
+				font-family: nettoicons
+				margin-left: .5em
+				font-size: .8em
+		.add_task_button
+			.close_task_button
+				cursor: pointer
+
+	.add_task_body
+		margin: 1em 0
+		padding: 1em
+		display: flex
+		flex-flow: column nowrap
+		//justify-content: space-between
+		input
+			outline: none
+			border: none
+			background-color: transparent
+			width: 100%
+		.add_title_border, .add_description_border, .add_subtasks_border
+			margin: .5em 0 .9em
+			height: 2em
+			width: 100%
+			border: .05em solid white
+			border-radius: 5em
+			padding: 0.2em 1em
+		.add_status
+			.selector_status
+				display: flex
+				flex-flow: row nowrap
+				justify-content: space-between
+				align-items: center
+				color: $mediumgrey
+				margin: .5em 0 0
+				height: 2em
+				width: 100%
+				border: .05em solid white
+				padding: 0 1em
+				border-radius: 5em
+				background-color: $darkgrey
+				.pre_status
+					span
+						font-size: 1.3em
+						&.todo
+							color: magenta
+						&.doing
+							color: aqua
+						&.done
+							color: lawngreen
+						&.overdue
+							color: yellow
+						&.canceled
+							color: red
+				.status_arrow
+					font-family: nettoicons
+					cursor: pointer
+					font-size: .2em
+					@include text-stroke (.3em $mediumgrey)
+					@include transform(rotate(90deg))
+			.type_status
+				margin-top: -1em
+				padding: 1.5em .9em .8em
+				max-height: 0
+				overflow: hidden
+				opacity: 1
+				border: .05em solid white
+				border-top: none
+				border-bottom-right-radius: 1em
+				border-bottom-left-radius: 1em
+				@include transform(translateY(0em))
+				@include transition (all 300ms cubic-bezier(0.4, 0, 0.2, 1))
+				&.closed
+					padding: .49em 1em
+					opacity: 0
+					@include transition (all 300ms cubic-bezier(0.4, 0, 0.2, 1))
+				.status_item
+					padding-bottom: .2em
+					cursor: pointer
+					color: $mediumgrey
+					span
+						font-size: 1.3em
+						&.todo
+							color: magenta
+						&.doing
+							color: aqua
+						&.done
+							color: lawngreen
+						&.overdue
+							color: yellow
+						&.canceled
+							color: red
+					&:hover
+						color: $white
+		.add_category
+			.add_category_text
+				margin-top: 0.9em
+			.selector_category
+				display: flex
+				flex-flow: row nowrap
+				justify-content: space-between
+				align-items: center
+				color: $mediumgrey
+				margin: .5em 0 0
+				height: 2em
+				width: 100%
+				border: .05em solid white
+				padding: 0 1em
+				border-radius: 5em
+				background-color: $darkgrey
+				span
+					font-family: nettoicons
+				.category_arrow
+					font-family: nettoicons
+					cursor: pointer
+					font-size: .2em
+					@include text-stroke (.3em $mediumgrey)
+					@include transform(rotate(90deg))
+			.type_category
+				margin-top: -1em
+				padding: 1.8em .8em .8em
+				max-height: 0
+				overflow: hidden
+				opacity: 1
+				border: .05em solid white
+				border-top: none
+				border-bottom-right-radius: 1em
+				border-bottom-left-radius: 1em
+				@include transition (all 300ms cubic-bezier(0.4, 0, 0.2, 1))
+				&.closed
+					padding: .49em 1em
+					opacity: 0
+					@include transition (all 300ms cubic-bezier(0.4, 0, 0.2, 1))
+				.category_item
+					padding-bottom: .6em
+					cursor: pointer
+					color: $mediumgrey
+					span
+						font-size: 1.3em
+						font-family: nettoicons
+					&:hover
+						color: $white
+		.add_images, .add_attachments
+			.add_images_text
+				margin-top: 0.9em
+			.drop_area_main
+				input
+					display: none
+				.drop_area
+					display: flex
+					flex-flow: row nowrap
+					justify-items: flex-start
+					align-items: center
+					width: 100%
+					margin: .5em 0 .9em
+					border: .1em dashed white
+					border-radius: 5em
+					text-align: center
+					color: $mediumgrey
+					.attch_text
+						overflow-x: hidden
+						text-overflow: ellipsis
+						white-space: nowrap
+						line-height: 1.2em
+					.icon
+						font-size: 1em
+						margin: .4em
+						padding-left: .7em
+					label
+						cursor: pointer
+		.add_button
+			align-self: flex-end
+			font-family: nettoicons
+			background-color: $yellow
+			color: $darkgrey
+			@include text-stroke (.04em $darkgrey)
+			border-radius: 5em
+			padding: 0.5em 0.4em
+			outline: none
+			border: none
+			bottom: 0
+			@include transition (all 300ms cubic-bezier(0.4, 0, 0.2, 1))
+			&:hover
+				@include transform(scale(1.1,1.1))
+				@include transition (all 300ms cubic-bezier(0.4, 0, 0.2, 1))
+
+
+.overley2
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: 3
+	background-color: rgba(black, .8)
+	opacity: 1
+	&.closed
+		opacity: 0
+		transition: opacity 350ms ease
+		pointer-events: none
+
+
+@media (max-width: 1024px) and (orientation: portrait)
+
+	.add_task 
+		width: 70%
+
+
+@media (max-width: 812px) and (orientation: landscape)
+
+	.add_task 
+		width: 100%
+		border: 0
+		left: 0
+		top: 0
+		transform: translate(0, 0)
+
+
+@media (max-width: 768px) and (orientation: portrait)
+
+	.add_task 
+		width: 60%
+		//height: 40em
+
+
+@media (max-width: 736px) and (orientation: landscape)
+
+	.add_task
+		position: absolute
+		width: 100%
+		border: 0
+		left: 0
+		top: 0
+		transform: translate(0, 0)
+		.add_task_button
+			height: 1em
+			border-top-left-radius: 0
+			border-top-right-radius: 0
+
+
+@media (max-width: 480px)
+	
+	.add_task
+		width: 100%
+		border-radius: 0
+		.add_task_header
+			border-radius: 0
+
+
+

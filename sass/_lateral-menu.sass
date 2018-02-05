@@ -1,0 +1,84 @@
+
+
+
+.container
+	.container_item
+		&.container_menu
+			overflow-x: hidden
+			overflow-y: auto
+			min-width: $w1
+			background-color: $black
+			display: flex
+			flex-flow: column nowrap
+			justify-content: space-between
+			align-items: center
+			&::-webkit-scrollbar
+				display: none
+			a
+				display: inline-block
+				span
+					display: inline-block
+			.menu_categories
+				margin-top: 1em
+				display: flex
+				align-items: center
+				flex-flow: column nowrap
+				.category
+					cursor: pointer
+					font-family: nettoicons-bold
+					font-size: 1.2em
+					line-height: 2.5em
+					color: $white
+					@include transition (all 0.3s cubic-bezier(0.4, 0, 0.2, 1))
+					&:hover
+						font-size: 2em
+						@include transition (all 0.3s cubic-bezier(0.4, 0, 0.2, 1))
+					&.category00
+						opacity: .5
+						margin-bottom: .5em
+						&:hover
+							font-size: 1.2em
+							opacity: .6
+					&.category01
+						//color: olive
+					&.category02
+						//color: lime
+					&.category03
+						//color: green
+					&.category04
+						//color: aqua
+					&.category05
+						//color: teal
+					&.category06
+						//color: blue
+					&.category07
+						//color: fuchsia
+					&.category08
+						//color: blueviolet
+					&.category09
+						//color: purple
+					&.category10
+						//color: coral
+			.settings
+				cursor: pointer
+				font-family: nettoicons-bold
+				font-size: 1.2em
+				line-height: 2.5em
+				color: $mediumgrey
+				padding: 0 1em 1em
+				background-color: $black
+				@include transition (all 0.1s cubic-bezier(0.4, 0, 0.2, 1))
+				&:hover
+					//font-size: 2em
+					opacity: .7
+					@include transition (all 0.1s cubic-bezier(0.4, 0, 0.2, 1))
+
+
+@media (max-width: 737px)
+
+	.container
+		.container_item
+			&.container_menu
+				display: none
+				
+

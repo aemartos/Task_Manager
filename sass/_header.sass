@@ -1,0 +1,239 @@
+
+.highlight
+	background-color: $yellow
+	color: black
+	//border-top: 1px solid $yellow 
+	//border-bottom: 2px solid $yellow 
+
+header
+	width: 100%
+	height: 3em
+	background-color: $yellow
+	display: flex
+	align-items: center
+	flex-flow: row nowrap
+
+	.header_item
+		height: 100%
+
+		&.header_logo
+			min-width: $w1
+			border-right: .05em solid $mediumyellow
+			display: flex
+			justify-content: center
+			align-items: center
+			img
+				mix-blend-mode: multiply
+				width: 1.5em
+				margin-top: .5em
+
+		&.header_menu
+			width: $w2
+			position: relative
+			.selector_desk
+				position: relative
+				width: $w2
+				color: $darkgrey
+				background-color: $yellow
+				border-right: .05em solid $mediumyellow
+				padding: 1em
+				display: flex
+				justify-content: space-between
+				align-items: center
+				z-index: 3
+				.desk_arrows
+					display: flex
+					justify-content: center
+					align-items: center
+					font-family: nettoicons
+					cursor: pointer
+					font-size: .2em
+					@include text-stroke (.3em $darkgrey)
+					@include transform(rotate(90deg))
+			.type_desk
+				padding: .5em 0
+				position: absolute
+				width: $w2
+				color: $darkgrey
+				background-color: $yellow
+				z-index: 2
+				border-top: .05em solid $mediumyellow
+				@include transform(translateY(0em))
+				@include transition (all 300ms cubic-bezier(0.4, 0, 0.2, 1))
+				&.closed
+					@include transform(translateY(-12em))
+					@include transition (all 300ms cubic-bezier(0.4, 0, 0.2, 1))
+				.desk_item
+					padding: .5em 1em
+					cursor: pointer
+					&:hover
+						background-color: $lightyellow
+
+		&.header_search
+			width: $w3
+			border-right: .05em solid $mediumyellow
+			display: flex
+			justify-content: center
+			align-items: center
+			flex-flow: row nowrap
+			.border_header_search
+				height: 2em
+				width: 90%
+				border: .05em solid $darkgrey
+				border-radius: 5em
+				padding: 0.2em 1em
+				display: flex
+				justify-content: center
+				align-items: center
+				flex-flow: row nowrap
+				.field_search
+					width: $w3
+					color: $darkgrey
+					outline: none
+					border: none
+					background-color: transparent
+				.button_search
+					font-family: nettoicons
+					color: $darkgrey
+					background-color: transparent
+					outline: none 
+					border: none
+
+		&.header_usercal
+			width: $w4
+			color: $darkgrey
+			display: flex
+			justify-content: flex-end
+			align-items: center
+			flex-flow: row nowrap
+			position: relative
+			.header_calendar
+				font-size: 1.5em
+				margin: 0 .5em
+				cursor: pointer
+				@include transition (all 300ms cubic-bezier(0.4, 0, 0.2, 1))
+				&:hover
+					@include transform(scale(1.2,1.2))
+					@include transition (all 300ms cubic-bezier(0.4, 0, 0.2, 1))
+			.header_user
+				display: flex
+				justify-content: flex-end
+				align-items: center
+				flex-flow: row nowrap
+				.user_item
+					&.user_name
+						margin-right: .6em
+						margin-left: .2em
+						cursor: default
+					&.user_icon
+						width: 2.5em
+						height: 2.5em
+						overflow: hidden
+						cursor: default
+						margin-right: .2em
+						border-radius: 5em
+						color: $yellow
+						background-color: $darkgrey
+						.user_icon_img
+							font-family: nettoicons
+							padding: .3em
+							line-height: 1.7em
+							font-size: 1.4em
+					&.user_arrow
+						cursor: pointer
+						margin-right: 3em
+						font-family: nettoicons
+						font-size: .2em
+						@include text-stroke (.3em $darkgrey)
+						@include transform(rotate(90deg))
+						@include transition (all 300ms cubic-bezier(0.4, 0, 0.2, 1))
+						&:hover
+							@include transform(rotate(210deg))
+							@include transition (all 300ms cubic-bezier(0.4, 0, 0.2, 1))
+			.header_user_menu
+				display: block
+				position: absolute
+				top: 3.6em
+				width: 10em
+				background-color: $yellow
+				padding: 1em 0
+				z-index: 2
+				@include transition (all 300ms cubic-bezier(0.4, 0, 0.2, 1))
+				&.closed
+					display: none
+					@include transition (all 300ms cubic-bezier(0.4, 0, 0.2, 1))
+				.user_menu_arrow
+					position: absolute
+					top: -.4em
+					right: .9em
+					width: 1em
+					height: 1em
+					border-radius: .1em
+					border-top: 1em solid $yellow
+					//border-right: 1em solid $yellow
+					@include transform(rotate(45deg))
+				.user_menu_item
+					padding: .5em 1em
+					&:hover
+						background-color: $lightyellow
+
+
+
+@media (max-width: 1024px)
+	
+	header
+		.header_item
+			&.header_menu
+				width: 12em				
+				.selector_desk
+					width: 11em
+				.type_desk
+					width: 11em
+			&.header_search
+				width: 14em
+
+
+@media (max-width: 768px) 
+
+	header
+		.header_item
+			&.header_menu
+				width: 14em
+				.selector_desk
+					width: 14em
+				.type_desk
+					width: 14em
+			&.header_usercal
+				.header_user
+					.user_name
+						display: none
+
+
+@media (max-width: 480px)
+	
+	header
+		.header_item
+			&.header_menu
+				width: 10em
+				border: none
+			&.header_search
+				display: none
+			&.header_usercal
+				justify-content: flex-end
+
+
+@media (max-width: 375px)
+	
+	header
+		.header_item
+			&.header_menu
+				.selector_desk
+					width: 11em
+				.type_desk
+					width: 11em
+
+
+
+
+
+
